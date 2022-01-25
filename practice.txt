@@ -4,4 +4,5 @@ Let's try and work on a second commit and see what happens.
 
 Step 1) Edit file.
 Step 2) Save file.
-Step 3) Commit file.
+Step 3) Stage changes.
+Step 4) Commit file.
