@@ -7,6 +7,11 @@ Step 2) Save file.
 Step 3) Stage changes.
 Step 4) Commit file.
 
+for merging:
+
+Step 1) Checkout directory you want to merge TO 
+Step 2) merge two directories together
+
 
 This is a change 
 
