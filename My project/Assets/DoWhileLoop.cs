@@ -12,6 +12,6 @@ public class DoWhileLoop : MonoBehaviour
         do
         {
             print("Hellow World");
-        } while (shouldContinute == true);
+        } while (shouldContinue == true);
     }
 }
