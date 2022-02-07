@@ -7,11 +7,6 @@ public class TransformFunctions : MonoBehaviour
     public float moveSpeed = 10f;
     public float turnSpeed = 50f;
 
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
