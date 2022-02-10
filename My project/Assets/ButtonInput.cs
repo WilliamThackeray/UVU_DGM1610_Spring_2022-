@@ -1,6 +1,6 @@
+using UnityEngine;
 using System.Collections;
-using UnityEngine;
-using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonInput : MonoBehaviour
 {
@@ -9,27 +9,26 @@ public class ButtonInput : MonoBehaviour
     public Sprite downgfx;
     public Sprite upgfx;
     public Sprite heldgfx;
-    public TExt boolDisplay1;
-    public TExt boolDisplay2;
-    public TExt boolDisplay3;
-    // Start is called before the first frame update
+    public Text boolDisplay1;
+    public Text boolDisplay2;
+    public Text boolDisplay3;
+
     void Start()
     {
-        graphic.sprite = standard;
+        graphic.sprite = standard;    
     }
 
-    // Update is called once per frame
     void Update()
     {
         bool down = Input.GetButtonDown("Jump");
         bool held = Input.GetButton("Jump");
-        bool up = Input.GetButton("Jump");
+        bool up = Input.GetButtonUp("Jump");
 
-        if (down)
+        if(down)
         {
             graphic.sprite = downgfx;
         }
-        else if (held) 
+        else if (held)
         {
             graphic.sprite = heldgfx;
         }
@@ -37,7 +36,7 @@ public class ButtonInput : MonoBehaviour
         {
             graphic.sprite = upgfx;
         }
-        else 
+        else
         {
             graphic.sprite = standard;
         }
