@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Operators : MonoBehaviour
 {
-    
+    int num1 = 100;
+    int num2 = 200;
+    int total = num1 + num2;
+
 }
