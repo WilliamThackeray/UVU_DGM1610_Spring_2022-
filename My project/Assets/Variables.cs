@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Variables : MonoBehaviour
 {
-    int health = 100;
-    int attackDamage = 5;
-    int accuracy = 95;
+    public int health = 100;
+    public int attackDamage = 5;
+    public int accuracy = 95;
     
 }
