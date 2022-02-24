@@ -3,7 +3,6 @@ using System.Collection.Generics;
   
 class Conditionals {
   
-    // Driver code
     public static void Main()
     {
       Dictionary healthItems = new Dictionary();
@@ -38,9 +37,6 @@ class Conditionals {
       } else if (enemyHealth <= 0) {
         Console.WriteLine("Enemy has been killed.");
       }
-      
-
-
     }
 }
 
