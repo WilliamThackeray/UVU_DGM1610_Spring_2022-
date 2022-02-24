@@ -11,7 +11,7 @@ public class Conditionals : MonoBehaviour
     {
 
     }
-    void Update() 
+    void OnMouseDown() 
     {
       Debug.Log("Player health: " + playerHealth);
       Debug.Log("Enemy health: " + enemyHealth);
