@@ -17,6 +17,13 @@ public class Switches : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            if (critChance < 1) {
+                critChance += 0.1;
+            }
+        }
+
         switch (critChance) {
             case 1:
                 Debug.Log("Critical Damage: " + (attackDamage * critChance));
@@ -55,19 +62,18 @@ public class Switches : MonoBehaviour
                 Debug.Log("Attack Damage: " + (attackDamage + (attackDamage*critChance))*2);
                 break;
             case 0.1:
-                Debug.Log("Critical Damage: " + (attackDamage + (attackDamage*critChance)));
+                Debug.Log("Critical Damage: " + (attackDamage * critChance));
+                Debug.Log("Attack Damage: " + (attackDamage + (attackDamage*critChance)));
                 break;
             case 0.0:
-                Debug.Log("Critical Damage: " + (attackDamage + (attackDamage*critChance)));
+                Debug.Log("Critical Damage: " + (attackDamage * critChance));
+                Debug.Log("Attack Damage: " + (attackDamage + (attackDamage*critChance)));
                 break;
             default:
-                Debug.Log("Critical Damage: " + attackDamage);
+                Debug.Log("Attack Damage: " + attackDamage);
                 break;
             
         }
     }
 
-    void OnMouseDown() {
-        Debug.Log("Attack Damage was: " + critChance);
-    }
 }
