@@ -6,10 +6,10 @@ public class EnableComponents : MonoBehaviour
 {
     private Light myLight;
     // Start is called before the first frame update
-    void Start()
-    {
-        myLight = GetComponent<myLight>();
-    }
+    // void Start()
+    // {
+    //     myLight = GetComponent<myLight>();
+    // }
 
     // Update is called once per frame
     void Update()

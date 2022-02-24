@@ -5,10 +5,10 @@ public class MouseClick : MonoBehaviour
 {
     private Rigidbody rigidbody;
 
-    private void Awake()
-    {
-        rigidbody = GetComponent<rigidbody>();
-    }
+    // private void Awake()
+    // {
+    //     rigidbody = GetComponent<rigidbody>();
+    // }
 
 
     void OnMouseDown()

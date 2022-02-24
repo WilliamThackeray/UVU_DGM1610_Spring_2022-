@@ -14,6 +14,6 @@ public class UsingDeltaTime : MonoBehaviour
             GetComponent<Light>().enabled = true;
 
         if(Input.GetKey(KeyCode.RightArrow))
-            transform.position += new Vector3(speed * Time.delataTime, 0.0f, 0.0f);
+            transform.position += new Vector3(speed * Time.deltaTime, 0.0f, 0.0f);
     }
 }

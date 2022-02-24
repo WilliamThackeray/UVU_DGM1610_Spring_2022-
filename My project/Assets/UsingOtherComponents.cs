@@ -20,6 +20,6 @@ public class UsingOtherComponents : MonoBehaviour
     {
         boxCol.size = new Vector3(3,3,3);
         Debug.Log("The player's score is " + anotherScript.playerScore);
-        Debug.Log("The player has dies " + yetAnotherScript,numberOfPlayerDeaths + " times");
+        Debug.Log("The player has dies " + yetAnotherScript.numberOfPlayerDeaths + " times");
     }
 }

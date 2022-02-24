@@ -21,9 +21,9 @@ public class KeyInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool down = KeyInput.GetKeyDown(KeyCode.Space);
-        bool held = KeyInput.GetKeyDown(KeyCode.Space);
-        bool up = KeyInput.GetKeyDown(KeyCode.Space);
+        bool down = Input.GetKeyDown(KeyCode.Space);
+        bool held = Input.GetKeyDown(KeyCode.Space);
+        bool up = Input.GetKeyDown(KeyCode.Space);
 
         if(down)
         {
