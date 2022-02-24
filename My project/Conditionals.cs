@@ -20,14 +20,27 @@ class Conditionals {
       attackItems.add("bow", 6);
       attackItems.add("spear", 12);
 
+      enemies.add("golem", 200);
+      enemies.add("rat", 5);
+      enemies.add("zombie", 50);
+      enemies.add("ghoul", 65);
+      
+      
+      var playerHealth = 100;
+      var enemyHealth = enemies["zombie"];
+      
+      while (playerHealth > 0 && enemyHealth > 0) {
+        // take input here
+        enemyHealth -= 10;
+      }
+      if (playerHealth <= 0) {
+        Console.WriteLine("You have died.");
+      } else if (enemyHealth <= 0) {
+        Console.WriteLine("Enemy has been killed.");
+      }
       
 
 
-
-
-      var health = 100;
-
-      
     }
 }
 
