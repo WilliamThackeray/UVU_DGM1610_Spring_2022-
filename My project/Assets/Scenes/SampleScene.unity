@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 210069185}
   - component: {fileID: 210069184}
   - component: {fileID: 210069187}
+  - component: {fileID: 210069188}
+  - component: {fileID: 210069189}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -232,6 +234,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myName: Echo
+--- !u!114 &210069188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210069183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 279284ff8d7df4e19836ff95a9a122e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 100
+  enemyHealth: 100
+--- !u!114 &210069189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210069183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d811ca2ec62694d9997357ff64717a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  critChance: 0
+  attackDamage: 10
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
