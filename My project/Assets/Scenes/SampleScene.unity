@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 210069187}
   - component: {fileID: 210069188}
   - component: {fileID: 210069189}
+  - component: {fileID: 210069190}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -255,13 +256,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210069183}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d811ca2ec62694d9997357ff64717a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   critChance: 0
   attackDamage: 10
+--- !u!114 &210069190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210069183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 829061c71f6d34645a093d7d184b8755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pHealth: 100
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
