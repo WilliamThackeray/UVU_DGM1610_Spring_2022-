@@ -138,6 +138,8 @@ GameObject:
   - component: {fileID: 210069188}
   - component: {fileID: 210069189}
   - component: {fileID: 210069190}
+  - component: {fileID: 210069191}
+  - component: {fileID: 210069192}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -270,12 +272,54 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210069183}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 829061c71f6d34645a093d7d184b8755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: 100
+--- !u!114 &210069191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210069183}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab6f54a7a5a5c471b949c5a3144b10d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pHealth: 100
+  items:
+  - Steel Helmet
+  - sword
+  - Fire resistance potion
+  - pants
+  - shoes
+  - bread
+  hasFireResist: 0
+--- !u!114 &210069192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210069183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e041b7e06a9c244dea3816031a84c3fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pHealth: 100
+  items:
+  - Steel Helmet
+  - Sword
+  - Fire resistance potion
+  - Iron Pants
+  - Leather Boots
+  - bread
+  hasFireResist: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
