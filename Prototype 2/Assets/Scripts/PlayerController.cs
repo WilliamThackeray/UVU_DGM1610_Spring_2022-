@@ -36,8 +36,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) {
             // launch projectiles
             Instantiate(projectilePrefab1, transform.position, projectilePrefab1.transform.rotation);
-            Instantiate(projectilePrefab2, transform.position, projectilePrefab2.transform.rotation);
-            Instantiate(projectilePrefab3, transform.position, projectilePrefab3.transform.rotation);
+            Instantiate(projectilePrefab2, transform.position + new Vector3(1.3f, 0, 0), projectilePrefab2.transform.rotation);
+            Instantiate(projectilePrefab3, transform.position - new Vector3(1.3f, 0, 0), projectilePrefab3.transform.rotation);
         }
     }
 }
