@@ -18,13 +18,13 @@ public class PlayerLook : MonoBehaviour
     void Update()
     {
         // lookInput = Input.GetAxis("Horizontal");
-        // transform.Rotate(Vector3.up * lookInput * Time.deltaTime * lookSpeed);
-        if (Input.GetKey(KeyCode.RightArrow)) {
-            lookInput = Input.GetAxis("Horizontal");
-            transform.Rotate(Vector3.up * lookInput * Time.deltaTime * lookSpeed); 
-        } else if (Input.GetKey(KeyCode.LeftArrow)) {
-            lookInput = Input.GetAxis("Horizontal");
-            transform.Rotate(Vector3.up * lookInput * Time.deltaTime * lookSpeed); 
+        // transform.Rotate(Vector3.up, lookInput *  Time.deltaTime * lookSpeed);
+        if (Input.GetKey(KeyCode.Period)) {
+            // lookInput = Input.GetAxis("Horizontal");
+            transform.Rotate(Vector3.up, Time.deltaTime * lookSpeed); 
+        } else if (Input.GetKey(KeyCode.Comma)) {
+            // lookInput = Input.GetAxis("Horizontal");
+            transform.Rotate(-Vector3.up, Time.deltaTime * lookSpeed); 
         }
 
     }
