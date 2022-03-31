@@ -20,7 +20,7 @@ public class PlayerStats : MonoBehaviour
         currentHealth = 100.0f;
         speed = 12.0f;
         jumpHeight = 500.0f;
-        sprintSpeed = speed * 1.5f;
+        sprintSpeed = speed * 0.5f;
         primaryAttackDamage = 10.0f;
         specialAttackDamage = 20.0f;
         playerLevel = 1;

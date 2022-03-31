@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float range = 100.0f;
     private Rigidbody playerRb;
 
+    // imports the players stats declared in the PlayerStats Script
     private PlayerStats playerStatsScript;
 
     // Start is called before the first frame update
@@ -47,10 +48,10 @@ public class PlayerController : MonoBehaviour
         }
 
         // Player Sprint Action 
-        if (Input.GetKey(KeyCode.LeftShift)) {
-            playerStatsScript.speed = playerStatsScript.sprintSpeed;
-        } else {
-            playerStatsScript.speed = 10.0f;
+        if (Input.GetKeyDown(KeyCode.LeftShift)) {
+            playerStatsScript.speed += playerStatsScript.sprintSpeed;
+        } else if (Input.GetKeyUp(KeyCode.LeftShift)) {
+            playerStatsScript.speed -= playerStatsScript.sprintSpeed;
         }
 
         // Player Jump Action
@@ -61,6 +62,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        // onGround is true when the player lands back on the ground
         if (collision.gameObject.CompareTag("Ground")) {
             onGround = true;
         }
