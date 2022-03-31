@@ -7,19 +7,26 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     public GameObject player;
-    private Vector3 yOffset = new Vector3 (0, 9, 0);
-    // private Quaternion rotateOffset = Quaternion.Euler(0, 90, 0);
+    private Vector3 yOffset;
+    public float damping = 100;
+    // private Quaternion rotateOffset = Quaternion.Euler(75, 0, 0);
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        yOffset = transform.position - player.transform.position;
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = player.transform.position + yOffset;
-        // transform.rotation = player.transform.rotation + rotateOffset;
+        float currentAngle = transform.eulerAngles.y;
+        float ang = player.transform.eulerAngles.y;
+        float angle = Mathf.LerpAngle(currentAngle, ang, Time.deltaTime * damping);
+        Quaternion rotation = Quaternion.Euler(0, angle, 0);
+
+        transform.position = player.transform.position + (rotation * yOffset);
+         
+        transform.LookAt(player.transform);
     }
 }
