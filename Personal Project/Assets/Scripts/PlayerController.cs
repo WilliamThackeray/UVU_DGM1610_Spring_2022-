@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public bool onGround = true;
     public float range = 100.0f;
     private Rigidbody playerRb;
+    public int baseJumps;
+
+    // public GameObject daggerPrefab1; 
 
     // imports the players stats declared in the PlayerStats Script
     private PlayerStats playerStatsScript;
@@ -21,7 +24,7 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifier;
         playerStatsScript = GameObject.Find("Player").GetComponent<PlayerStats>();
-        
+        baseJumps = playerStatsScript.jumpCount;
     }
 
     // Update is called once per frame
@@ -54,17 +57,23 @@ public class PlayerController : MonoBehaviour
             playerStatsScript.speed -= playerStatsScript.sprintSpeed;
         }
 
-        // Player Jump Action
-        if (Input.GetKeyDown(KeyCode.Space) && onGround) {
+            // Player Jump Action
+        if (Input.GetKeyDown(KeyCode.Space) && (onGround || playerStatsScript.jumpCount > 0)) {
             playerRb.AddForce(Vector3.up * playerStatsScript.jumpHeight, ForceMode.Impulse);
             onGround = false;
+            playerStatsScript.jumpCount -= 1;
         }
+        // if (Input.GetKeyDown(KeyCode.M)) {
+        //     Instantiate(daggerPrefab1, transform.position, daggerPrefab1.transform.rotation + transform.rotation);
+        // }
     }
     private void OnCollisionEnter(Collision collision)
     {
         // onGround is true when the player lands back on the ground
         if (collision.gameObject.CompareTag("Ground")) {
             onGround = true;
+            // resets the number of jumps the player gets after they land
+            playerStatsScript.jumpCount = baseJumps;
         }
     }
 }
