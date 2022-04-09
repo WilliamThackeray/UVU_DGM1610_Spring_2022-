@@ -18,6 +18,7 @@ public class VoyagerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class VoyagerAttack : MonoBehaviour
         }
 
     }
+    // Function to process the attack cooldown
     IEnumerator AttackCoolDown () {
         yield return new WaitForSeconds(attackSpeed);
         cooldown = true;
