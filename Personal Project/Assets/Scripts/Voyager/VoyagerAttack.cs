@@ -27,11 +27,11 @@ public class VoyagerAttack : MonoBehaviour
         // Primary Attack 
         if (Input.GetKey(KeyCode.M) && cooldown) {
             // instantiate dagger prefabs here
-            Instantiate(daggerPrefab1, transform.position, daggerPrefab1.transform.rotation * transform.rotation);
-            Instantiate(daggerPrefab1, transform.position, daggerPrefab1.transform.rotation * transform.rotation * posRotation1);
-            Instantiate(daggerPrefab1, transform.position, daggerPrefab1.transform.rotation * transform.rotation * posRotation2);
-            Instantiate(daggerPrefab1, transform.position, daggerPrefab1.transform.rotation * transform.rotation * negRotation1);
-            Instantiate(daggerPrefab1, transform.position, daggerPrefab1.transform.rotation * transform.rotation * negRotation2);
+            Instantiate(daggerPrefab1, transform.position + new Vector3(1, 1, 1), daggerPrefab1.transform.rotation * transform.rotation);
+            Instantiate(daggerPrefab1, transform.position + new Vector3(1, 1, 1), daggerPrefab1.transform.rotation * transform.rotation * posRotation1);
+            Instantiate(daggerPrefab1, transform.position + new Vector3(1, 1, 1), daggerPrefab1.transform.rotation * transform.rotation * posRotation2);
+            Instantiate(daggerPrefab1, transform.position + new Vector3(1, 1, 1), daggerPrefab1.transform.rotation * transform.rotation * negRotation1);
+            Instantiate(daggerPrefab1, transform.position + new Vector3(1, 1, 1), daggerPrefab1.transform.rotation * transform.rotation * negRotation2);
             // Make the cooldown happen
             cooldown = false;
             StartCoroutine(AttackCoolDown());
