@@ -34,10 +34,6 @@ public class DestroyWhenKilled : MonoBehaviour
         if (other.gameObject.tag == "Player") {
             playerStatsScript.currentHealth -= 5;
         }
-        if (playerStatsScript.currentHealth <= 0)
-        {
-            Destroy(other.gameObject);
-        }
         
     }
 

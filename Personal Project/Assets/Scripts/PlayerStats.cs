@@ -13,6 +13,7 @@ public class PlayerStats : MonoBehaviour
     public float specialAttackDamage;
     public int playerLevel;    
     public int jumpCount = 1;
+    public bool isAlive;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class PlayerStats : MonoBehaviour
         specialAttackDamage = 20.0f;
         playerLevel = 1;
         jumpCount = 1;
+        isAlive = true;
     }
 
     // Update is called once per frame

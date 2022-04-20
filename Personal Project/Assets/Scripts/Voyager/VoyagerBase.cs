@@ -5,7 +5,7 @@ using UnityEngine;
 public class VoyagerBase : MonoBehaviour
 {
     private Rigidbody playerRb; //Gets players rigidbody 
-    private PlayerStats playerStatsScript;  //Gets base player stats.
+    public PlayerStats playerStatsScript;  //Gets base player stats.
     private VoyagerAttack voyagerAttackScript;
     private VoyagerAttack voyagerControlScript;
 
@@ -23,11 +23,14 @@ public class VoyagerBase : MonoBehaviour
         playerStatsScript.primaryAttackDamage *= 1.5f;
         playerStatsScript.specialAttackDamage *= 3.0f;
         playerStatsScript.jumpCount = 2;
+        playerStatsScript.isAlive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (playerStatsScript.currentHealth <= 0) {
+            playerStatsScript.isAlive = false;
+        }
     }
 }
