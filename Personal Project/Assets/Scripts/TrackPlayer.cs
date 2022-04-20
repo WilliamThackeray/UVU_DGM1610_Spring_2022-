@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TrackPlayer : MonoBehaviour
 {
+    private VoyagerBase voyagerBaseScipt;
+
     public float speed = 3.0f;
     private Rigidbody enemyRb;
     private GameObject player;
@@ -14,6 +16,8 @@ public class TrackPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        voyagerBaseScipt = GameObject.Find("Player").GetComponent<VoyagerBase>();
+
         enemyRb = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
         enemy = GameObject.Find("Enemy");
@@ -22,7 +26,9 @@ public class TrackPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 moveDirection = (player.transform.position - transform.position).normalized;
-        enemyRb.AddForce(moveDirection * speed);
+        if (voyagerBaseScipt.playerStatsScript.isAlive) { // if the player is alive 
+            Vector3 moveDirection = (player.transform.position - transform.position).normalized;
+            enemyRb.AddForce(moveDirection * speed);
+        }
     }
 }

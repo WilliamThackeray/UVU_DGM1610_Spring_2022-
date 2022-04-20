@@ -30,38 +30,42 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Moving NWSE.
-        inputH = Input.GetAxis("Horizontal");
-        inputV = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.right * Time.deltaTime * inputH * playerStatsScript.speed);
-        transform.Translate(Vector3.forward * Time.deltaTime * inputV * playerStatsScript.speed);
+        if (playerStatsScript.isAlive) { // if the player is alive
+        
+            // Moving NWSE.
+            inputH = Input.GetAxis("Horizontal");
+            inputV = Input.GetAxis("Vertical");
+            transform.Translate(Vector3.right * Time.deltaTime * inputH * playerStatsScript.speed);
+            transform.Translate(Vector3.forward * Time.deltaTime * inputV * playerStatsScript.speed);
 
-        // If player moves 100 in any direction, they should stop moving
-        if (transform.position.x >= range) {
-            transform.position = new Vector3(range, transform.position.y, transform.position.z);
-        }
-        if (transform.position.x <= -range) {
-            transform.position = new Vector3(-range, transform.position.y, transform.position.z);
-        }
-        if (transform.position.z >= range) {
-            transform.position = new Vector3(transform.position.x, transform.position.y, range);
-        }
-        if (transform.position.z <= -range) {
-            transform.position = new Vector3(transform.position.x, transform.position.y, -range);
-        }
 
-        // Player Sprint Action 
-        if (Input.GetKeyDown(KeyCode.LeftShift)) {
-            playerStatsScript.speed += playerStatsScript.sprintSpeed;
-        } else if (Input.GetKeyUp(KeyCode.LeftShift)) {
-            playerStatsScript.speed -= playerStatsScript.sprintSpeed;
-        }
+            // If player moves 100 in any direction, they should stop moving
+            if (transform.position.x >= range) {
+                transform.position = new Vector3(range, transform.position.y, transform.position.z);
+            }
+            if (transform.position.x <= -range) {
+                transform.position = new Vector3(-range, transform.position.y, transform.position.z);
+            }
+            if (transform.position.z >= range) {
+                transform.position = new Vector3(transform.position.x, transform.position.y, range);
+            }
+            if (transform.position.z <= -range) {
+                transform.position = new Vector3(transform.position.x, transform.position.y, -range);
+            }
 
-            // Player Jump Action
-        if (Input.GetKeyDown(KeyCode.Space) && (onGround || playerStatsScript.jumpCount > 0)) {
-            playerRb.AddForce(Vector3.up * playerStatsScript.jumpHeight, ForceMode.Impulse);
-            onGround = false;
-            playerStatsScript.jumpCount -= 1;
+            // Player Sprint Action 
+            if (Input.GetKeyDown(KeyCode.LeftShift)) {
+                playerStatsScript.speed += playerStatsScript.sprintSpeed;
+            } else if (Input.GetKeyUp(KeyCode.LeftShift)) {
+                playerStatsScript.speed -= playerStatsScript.sprintSpeed;
+            }
+
+                // Player Jump Action
+            if (Input.GetKeyDown(KeyCode.Space) && (onGround || playerStatsScript.jumpCount > 0)) {
+                playerRb.AddForce(Vector3.up * playerStatsScript.jumpHeight, ForceMode.Impulse);
+                onGround = false;
+                playerStatsScript.jumpCount -= 1;
+            }
         }
         // if (Input.GetKeyDown(KeyCode.M)) {
         //     Instantiate(daggerPrefab1, transform.position, daggerPrefab1.transform.rotation + transform.rotation);

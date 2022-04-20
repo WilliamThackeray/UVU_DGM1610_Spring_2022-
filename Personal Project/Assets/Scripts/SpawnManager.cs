@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject player;
+    private VoyagerBase voyagerBaseScipt;
+
     public GameObject enemyPrefab;
 
     private float curPos;
@@ -14,7 +15,8 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        voyagerBaseScipt = GameObject.Find("Player").GetComponent<VoyagerBase>();
+        //player = GameObject.Find("Player");
         StartCoroutine(EnemySpawnsRoutine());
     }
 
@@ -25,11 +27,13 @@ public class SpawnManager : MonoBehaviour
     }
     IEnumerator EnemySpawnsRoutine () 
     {
-        yield return new WaitForSeconds(8);
-        for (int i = 0; i < enemiesToSpawn; i++) {
-            Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation); 
+        if (voyagerBaseScipt.playerStatsScript.isAlive) { // if the player is alive 
+            yield return new WaitForSeconds(8);
+            for (int i = 0; i < enemiesToSpawn; i++) {
+                Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation); 
+            }
+            StartCoroutine(EnemySpawnsRoutine());
         }
-        StartCoroutine(EnemySpawnsRoutine());
     }
     public Vector3 GenerateSpawnPosition() 
     {

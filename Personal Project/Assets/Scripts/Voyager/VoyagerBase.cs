@@ -33,4 +33,9 @@ public class VoyagerBase : MonoBehaviour
             playerStatsScript.isAlive = false;
         }
     }
+
+    public bool IsPlayerAlive() {
+        Debug.Log(playerStatsScript.isAlive);
+        return playerStatsScript.isAlive;
+    }
 }
