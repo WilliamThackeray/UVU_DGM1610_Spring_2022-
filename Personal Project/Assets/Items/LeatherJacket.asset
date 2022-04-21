@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c79f176459045018473b5571562c1f, type: 3}
+  m_Name: LeatherJacket
+  m_EditorClassIdentifier: 
+  name: Leather Jacket
+  description: Well this looks nice. Fashionable? Yep. Convenient? Of course. Tough?
+    Absolutly.
+  lore: 
+  look: {fileID: 0}
+  attackDamage: 0
+  attackSpeed: 0
+  moveSpeed: 0
+  health: 0
+  healing: 0
+  armor: 10

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    private VoyagerBase voyagerBaseScipt;
+    private PlayerStats playerStatsScript;
 
     public GameObject enemyPrefab;
 
@@ -15,7 +15,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        voyagerBaseScipt = GameObject.Find("Player").GetComponent<VoyagerBase>();
+        playerStatsScript = GameObject.Find("Player").GetComponent<PlayerStats>();
         //player = GameObject.Find("Player");
         StartCoroutine(EnemySpawnsRoutine());
     }
@@ -27,7 +27,7 @@ public class SpawnManager : MonoBehaviour
     }
     IEnumerator EnemySpawnsRoutine () 
     {
-        if (voyagerBaseScipt.playerStatsScript.isAlive) { // if the player is alive 
+        if (playerStatsScript.isAlive) { // if the player is alive 
             yield return new WaitForSeconds(8);
             for (int i = 0; i < enemiesToSpawn; i++) {
                 Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation); 
