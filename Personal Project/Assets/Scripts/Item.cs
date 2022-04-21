@@ -9,7 +9,9 @@ public class Item : ScriptableObject
 
     public new string name;
     public string description;
-    public enum Type // type of item
+
+    public ItemType itemType;
+    public enum ItemType // type of item
     {
         Healing,
         Damage,
@@ -17,6 +19,7 @@ public class Item : ScriptableObject
         Special,
         Other,
     }
+
     public string lore;
 
     public Sprite look;

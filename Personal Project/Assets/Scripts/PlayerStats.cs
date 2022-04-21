@@ -1,3 +1,5 @@
+// MAYBE CONVERT THIS FILE INTO A SCRIPTABLE OBJECT FOR EACH TYPE OF CHAMPION //
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
