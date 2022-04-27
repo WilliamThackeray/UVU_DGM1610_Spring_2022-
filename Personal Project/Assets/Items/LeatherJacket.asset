@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Leather Jacket
   description: Well this looks nice. Fashionable? Yep. Convenient? Of course. Tough?
     Absolutly.
+  itemType: 2
   lore: 
   look: {fileID: 0}
   attackDamage: 0

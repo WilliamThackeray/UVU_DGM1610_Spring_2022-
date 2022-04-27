@@ -18,6 +18,7 @@ public class SpawnManager : MonoBehaviour
         playerStatsScript = GameObject.Find("Player").GetComponent<PlayerStats>();
         //player = GameObject.Find("Player");
         StartCoroutine(EnemySpawnsRoutine());
+        Debug.Log("Coroutine should be started");
     }
 
     // Update is called once per frame
@@ -27,8 +28,11 @@ public class SpawnManager : MonoBehaviour
     }
     IEnumerator EnemySpawnsRoutine () 
     {
+        Debug.Log("In coroutine.");
+        Debug.Log(playerStatsScript.isAlive);
         if (playerStatsScript.isAlive) { // if the player is alive 
             yield return new WaitForSeconds(8);
+            Debug.Log("Hello There");
             for (int i = 0; i < enemiesToSpawn; i++) {
                 Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation); 
             }

@@ -5,12 +5,14 @@ using UnityEngine;
 public class DestroyWhenKilled : MonoBehaviour
 {
     private PlayerStats playerStatsScript;  //Gets base player stats.
+    private GameManager gameManagerScript;
     public int health = 100;
 
     // Start is called before the first frame update
     void Start()
     {
         playerStatsScript = GameObject.Find("Player").GetComponent<PlayerStats>();
+        gameManagerScript = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -21,6 +23,9 @@ public class DestroyWhenKilled : MonoBehaviour
 
     // When an attack hits an enemy, destroy and cause damage
     private void OnCollisionEnter(Collision other) {
+        if (!playerStatsScript.isAlive) {
+            gameManagerScript.gameOver.Invoke();
+        }
         if (other.gameObject.tag == "Dagger") 
         {
             Destroy(other.gameObject);

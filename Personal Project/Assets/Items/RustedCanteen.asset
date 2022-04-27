@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Rusted Canteen
   description: An old canteen. Not sure what this liquid is but it definitly makes
     me jittery.
+  itemType: 2
   lore: 
   look: {fileID: 0}
   attackDamage: 0
@@ -22,3 +23,4 @@ MonoBehaviour:
   moveSpeed: 10
   health: 0
   healing: 0
+  armor: 0
